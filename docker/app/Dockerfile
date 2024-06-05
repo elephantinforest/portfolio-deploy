@@ -51,7 +51,8 @@ RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 WORKDIR /var/www/html
 RUN npm install
 RUN composer install
-RUN php ./src/src/migration/initialize_all_table.php
+# マイグレーションの実行（ファイルパスが正しいことを確認）
+# RUN php /var/www/html/src/migration/initialize_all_table.php
 
 # Apacheの設定ファイルをコピー
 COPY ./apache2.conf /etc/apache2/apache2.conf
