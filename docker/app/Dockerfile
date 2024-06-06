@@ -55,6 +55,6 @@ RUN composer install
 # RUN php /var/www/html/src/migration/initialize_all_table.php
 
 # Apacheの設定ファイルをコピー
-COPY ./apache2.conf /etc/apache2/apache2.conf
+# COPY ./apache2.conf /etc/apache2/apache2.conf
 
 RUN chown -R www-data:www-data /var/www/html
